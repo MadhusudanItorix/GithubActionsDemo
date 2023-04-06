@@ -1,8 +1,22 @@
-name: hello-world
-'on': push
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
+
 jobs:
-  my-job:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello Tested"
+    - run: |
+        echo "Hello $!"
+        echo "- in $!"
+
+  

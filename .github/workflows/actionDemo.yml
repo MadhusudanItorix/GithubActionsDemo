@@ -3,11 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: 'Name'
         required: true
         default: 'Mona the Octocat'
       home:
-        description: 'location'
+        description: 'Location'
         required: false
         default: 'The Octoverse'
 
@@ -17,4 +17,4 @@ jobs:
     steps:
     - run: |
         echo "Hello ${{ inputs.name }}!"
-        echo "- in ${{ inputs.home }}!"
+        echo "I am in ${{ inputs.home }}!"

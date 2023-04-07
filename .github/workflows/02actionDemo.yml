@@ -1,20 +1,30 @@
-name: Manually triggered workflow 2
-on:
+name: Manually triggered workflow 3
+'on':
   workflow_dispatch:
     inputs:
       name:
-        description: 'Name'
+        description: Name
         required: true
-        default: 'Mona the Octocat'
+        default: Mona the Octocat
       home:
-        description: 'Location'
+        description: Location
         required: false
-        default: 'The Octoverse'
-
+        default: The Octoverse
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "Hello ${{ inputs.name }}!"
-        echo "I am in ${{ inputs.home }}!"
+      - run: |
+          echo "Hello ${{ inputs.name }}!"
+          echo "I am in ${{ inputs.home }}!"
+  SleepForSomeSeconds:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 100s
+        shell: bash
+  say_hello_again:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hello ${{ inputs.name }}!"
+          echo "I am in ${{ inputs.home }}!"

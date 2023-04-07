@@ -20,7 +20,7 @@ jobs:
   SleepForSomeSeconds:
     runs-on: ubuntu-latest
     steps:
-      - run: sleep 60s
+      - run: sleep 4s
         shell: bash
   say_hello_again:
     runs-on: ubuntu-latest
